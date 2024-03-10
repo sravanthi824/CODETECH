@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Chatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hello! I'm your chatbot. How can I assist you today?");
+        
+        while (true) {
+            String userInput = scanner.nextLine();
+            String botResponse = generateResponse(userInput);
+            System.out.println("Chatbot: " + botResponse);
+            
+            if (userInput.equalsIgnoreCase("bye")) {
+                System.out.println("Chatbot: Goodbye! Have a great day!");
+                break;
+            }
+        }
+        scanner.close();
+    }
+    
+    public static String generateResponse(String userInput) {
+        // Implement your NLP logic here to generate appropriate responses
+        
+        // Example response generation based on user input
+        if (userInput.contains("how are you")) {
+            return "I'm just a chatbot, but thanks for asking!";
+        } else if (userInput.contains("weather")) {
+            return "The weather is always nice in the digital world!";
+        } else if (userInput.contains("time")) {
+            return "You can check the time on your device's clock.";
+        } else {
+            return "I'm not sure how to respond to that. Can you ask something else?";
+        }
+    }
+}
